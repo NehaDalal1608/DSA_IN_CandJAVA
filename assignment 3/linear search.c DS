@@ -1,0 +1,35 @@
+#include<stdio.h>
+void main()
+{
+int a[30],loc,item,i,n;
+printf("\n Enter no. of elements:");
+scanf("%d",&n);
+printf("\n Enter item to be search:");
+scanf("%d",&item);
+printf("\n Enter elements:");
+
+for(i=1;i<=n;i++)
+scanf("%d",&a[i]);
+loc=1;
+
+while(a[loc]!=item && loc<=n)
+loc++;
+
+if(loc==n+i)
+{
+printf("\n Search is unsuccessful");
+}
+else
+{
+printf("\n %d is present at location %d",item,loc);
+}
+}
+
+/*Output
+Enter no. of elements:4        
+
+ Enter item to be search:66
+
+ Enter elements:22 44 66 88
+
+ 66 is present at location 3*/

@@ -1,0 +1,60 @@
+#include<stdio.h>
+void main()
+{
+	int x[5];
+	int y[5]; 
+	int i, j, k, temp, z[10];
+	printf("ENTER THE ELEMENTS OF THE ARRAY");   
+	for(i=0;i<5;i++)
+	{
+	scanf("%d",&x[i]);
+	}
+	for(i=0;i<5;i++)
+	{
+	scanf("%d",&y[i]);
+	}
+	for(i=0;i<=4;i++)
+	{
+		for(j=i+1;j<=4;j++)
+		{
+			if(x[i] > x[j])
+			{
+				temp = x[i];
+				x[i] = x[j];
+				x[j] = temp;
+			}
+			if(y[i] > y[j])
+			{
+				temp = y[i];
+				y[i] = y[j];
+				y[j] = temp;
+			}
+		}
+	}
+	for(i=j=k=0;i<=9; )
+	{
+		if(x[i] <= y[k])
+		{
+			z[i++] = x[j++];
+		}
+		else
+		{
+			z[i++] = y[k++];
+		}
+		if(j==5 || k==5)
+		break;
+	}
+	for(i=j+1 ;j<=4;i++ )
+	{
+		z[i++] = x[j++];
+	}
+	for( j=0;k<=4;j++ )
+	{
+		z[i++] = y[k++];
+	}
+	printf("Sorted Array: ");
+	for(i=0;i<=9;i++)
+	{
+		printf("%d \n",z[i]);
+	}
+}

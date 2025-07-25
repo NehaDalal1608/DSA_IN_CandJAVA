@@ -1,0 +1,47 @@
+#include<stdio.h>
+void main()
+{
+int arr1[50],arr2[50],size1,size2,i,k,merge[100];
+printf("\n Enter arr1 size:");
+scanf("%d",&size1);
+printf("\n Enter arr1 elements:");
+for(i=0;i<size1;i++)
+{
+scanf("%d",&arr1[i]);
+merge[i]=arr1[i];
+}
+k=i;
+printf("\n Enter arr2 size:");
+scanf("%d",&size2);
+printf("\n Enter arr2 elemente:");
+for(i=0;i<size2;i++)
+{
+scanf("%d",&arr2[i]);
+merge[k]=arr2[i];
+k++;
+}
+printf("\n The new array after merging is:\n");
+for(i=0;i<k;i++)
+printf("%d\n",merge[i]);
+}
+
+/*ubuntu@ubuntu-OptiPlex-5090:~/Desktop$ ./a.out
+
+ Enter arr1 size:3
+
+ Enter arr1 elements:2 3 4
+
+ Enter arr2 size:5
+
+ Enter arr2 elemente:5 6 7 8 9
+
+ The new array after merging is:
+2
+3
+4
+5
+6
+7
+8
+9
+*/

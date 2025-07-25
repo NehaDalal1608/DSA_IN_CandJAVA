@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+void main()
+{
+int array[100], n, c, d, position, t;
+printf("Enter number of elements\n");
+scanf("%d", &n);
+printf("Enter %d integers\n", n);
+for (c = 0; c < n; c++)
+scanf("%d", &array[c]);
+for (c = 0; c < (n - 1); c++) 
+{
+position = c;
+for (d = c + 1; d < n; d++)
+{
+if (array[position] > array[d])
+position = d;
+}
+if (position != c)
+{
+t = array[c];
+array[c] = array[position];
+array[position] = t;
+}
+}
+printf("Sorted list in ascending order:\n");
+for (c = 0; c < n; c++)
+printf("%d\n", array[c]);
+
+}
+/*ubuntu@ubuntu-OptiPlex-5090:~/Desktop$ ./a.out
+Enter number of elements
+6
+Enter 6 integers
+32 54 77 21 43 22
+Sorted list in ascending order:
+21
+22
+32
+43
+54
+77
+*/

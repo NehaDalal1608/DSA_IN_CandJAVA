@@ -1,0 +1,42 @@
+#include<stdio.h>
+void main()
+{
+int a[100],n,c,d,position,t;
+printf("\n Enter no. of elements:");
+scanf("%d",&n);
+printf("\n Enter %d integers:",n);
+for(c=0;c<n;c++)
+scanf("%d",&a[c]);
+for(c=0;c<(n-1);c++)
+{
+position=c;
+for(d=c+1;d<n;d++)
+{
+if(a[position]>a[d])
+position=d;
+}
+if(position!=c)
+{
+t=a[c];
+a[c]=a[position];
+a[position]=t;
+}
+}
+printf("\n Sorted list in ascending order:\n");
+for(c=0;c<n;c++)
+printf("%d\n",a[c]);
+}
+
+/*ubuntu@ubuntu-OptiPlex-5090:~/Desktop$ ./a.out
+
+ Enter no. of elements:5
+
+ Enter 5 integers:23 34 21 57 43
+
+ Sorted list in ascending order:
+21
+23
+34
+43
+57*/
+
